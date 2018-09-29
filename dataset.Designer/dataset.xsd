@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dataset" targetNamespace="http://tempuri.org/dataset.xsd" xmlns:mstns="http://tempuri.org/dataset.xsd" xmlns="http://tempuri.org/dataset.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CommunityConnectionString" ConnectionStringObject="" IsAppSettingsProperty="True" Modifier="Assembly" Name="CommunityConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MCKJ.Properties.Settings.GlobalReference.Default.CommunityConnectionString" Provider="System.Data.SqlClient">
+          </Connection>
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblNICTableAdapter" GeneratorDataComponentClassName="tblNICTableAdapter" Name="tblNIC" UserDataComponentName="tblNICTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CommunityConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="False" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="True" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="False">
+                    <CommandText>SELECT 
+		ID ,
+		MemberID,
+		[Image],
+		tblNIC.NIC,
+		MemberSign,
+		SecretarySign,
+		IssueDate,
+		ValidDate,
+		tblNIC.FCardNo,
+		GrandFatherName,
+		Orakh,
+		Nukh,
+		Address,
+		tblFamilyMember.MemberName,
+		tblFamilyMember.FatherName,
+		tblFamilyMember.DOB,
+		tblFamilyMember.BloodGroup,
+		tblFamilyMember.CNIC,
+		tblFamilyMember.Mobile
+FROM tblNIC
+
+INNER JOIN 	tblFamilyMember ON
+		tblFamilyMember.FamilyMemberID = tblNIC.MemberID
+ORDER BY RIGHT(tblNIC.NIC,5)</CommandText>
+                    <Parameters>
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="MemberID" DataSetColumn="MemberID" />
+              <Mapping SourceColumn="Image" DataSetColumn="Image" />
+              <Mapping SourceColumn="NIC" DataSetColumn="NIC" />
+              <Mapping SourceColumn="MemberSign" DataSetColumn="MemberSign" />
+              <Mapping SourceColumn="SecretarySign" DataSetColumn="SecretarySign" />
+              <Mapping SourceColumn="IssueDate" DataSetColumn="IssueDate" />
+              <Mapping SourceColumn="ValidDate" DataSetColumn="ValidDate" />
+              <Mapping SourceColumn="FCardNo" DataSetColumn="FCardNo" />
+              <Mapping SourceColumn="GrandFatherName" DataSetColumn="GrandFatherName" />
+              <Mapping SourceColumn="Orakh" DataSetColumn="Orakh" />
+              <Mapping SourceColumn="Nukh" DataSetColumn="Nukh" />
+              <Mapping SourceColumn="Address" DataSetColumn="Address" />
+              <Mapping SourceColumn="MemberName" DataSetColumn="MemberName" />
+              <Mapping SourceColumn="FatherName" DataSetColumn="FatherName" />
+              <Mapping SourceColumn="DOB" DataSetColumn="DOB" />
+              <Mapping SourceColumn="BloodGroup" DataSetColumn="BloodGroup" />
+              <Mapping SourceColumn="CNIC" DataSetColumn="CNIC" />
+              <Mapping SourceColumn="Mobile" DataSetColumn="Mobile" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="CommunityConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="True" GeneratorSourceName="CreateNIC" Modifier="Public" Name="CreateNIC" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="True" UserGetMethodName="GetDataBy" UserSourceName="CreateNIC">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="False">
+                    <CommandText>INSERT INTO tblNIC (MemberID,Image,NIC,MemberSign,SecretarySign,IssueDate,ValidDate,FCardNo,GrandFatherName,Orakh,Nukh,Address) VALUES (@MemberID,@Image,@NIC,@MemberSign,@SecretarySign,@IssueDate,@ValidDate,@FCardNo,@GrandFatherName,@Orakh,@Nukh,@Address)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="False" AutogeneratedName="MemberID" ColumnName="MemberID" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@MemberID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="MemberID" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="Image" ColumnName="Image" DataSourceName="" DataTypeServer="image" DbType="Binary" Direction="Input" ParameterName="@Image" Precision="0" ProviderType="Image" Scale="0" Size="2147483647" SourceColumn="Image" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="NIC" ColumnName="NIC" DataSourceName="" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@NIC" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="NIC" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="MemberSign" ColumnName="MemberSign" DataSourceName="" DataTypeServer="image" DbType="Binary" Direction="Input" ParameterName="@MemberSign" Precision="0" ProviderType="Image" Scale="0" Size="2147483647" SourceColumn="MemberSign" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="SecretarySign" ColumnName="SecretarySign" DataSourceName="" DataTypeServer="image" DbType="Binary" Direction="Input" ParameterName="@SecretarySign" Precision="0" ProviderType="Image" Scale="0" Size="2147483647" SourceColumn="SecretarySign" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="IssueDate" ColumnName="IssueDate" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@IssueDate" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="IssueDate" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="ValidDate" ColumnName="ValidDate" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@ValidDate" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="ValidDate" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="FCardNo" ColumnName="FCardNo" DataSourceName="" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@FCardNo" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="FCardNo" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="GrandFatherName" ColumnName="GrandFatherName" DataSourceName="" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@GrandFatherName" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="GrandFatherName" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="Orakh" ColumnName="Orakh" DataSourceName="" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@Orakh" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="Orakh" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="Nukh" ColumnName="Nukh" DataSourceName="" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@Nukh" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="Nukh" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="Address" ColumnName="Address" DataSourceName="" DataTypeServer="varchar(100)" DbType="AnsiString" Direction="Input" ParameterName="@Address" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="Address" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="CommunityConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="True" GeneratorSourceName="DeleteNIC" Modifier="Public" Name="DeleteNIC" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="True" UserGetMethodName="GetDataBy1" UserSourceName="DeleteNIC">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="False">
+                    <CommandText>DELETE FROM tblNIC WHERE ID = @ID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="False" AutogeneratedName="ID" ColumnName="ID" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="CommunityConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="True" GeneratorSourceName="UpdateNIC" Modifier="Public" Name="UpdateNIC" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="True" UserGetMethodName="GetDataBy2" UserSourceName="UpdateNIC">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="False">
+                    <CommandText>UPDATE tblNIC
+	SET
+	MemberID = @MemberID,
+	[Image] = @Image,
+	NIC = @NIC,
+	MemberSign = @MemberSign,
+	SecretarySIgn = @SecretarySign,
+	IssueDate = @IssueDate,
+	ValidDate = @ValidDate,
+	FCardNo = @FCardNo,
+	GrandFatherName = @GrandFatherName,
+	Nukh = @Nukh,
+	Orakh = @Orakh,
+	Address = @Address
+WHERE
+	ID = @ID
+</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="False" AutogeneratedName="MemberID" ColumnName="MemberID" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@MemberID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="MemberID" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="Image" ColumnName="Image" DataSourceName="" DataTypeServer="image" DbType="Binary" Direction="Input" ParameterName="@Image" Precision="0" ProviderType="Image" Scale="0" Size="2147483647" SourceColumn="Image" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="NIC" ColumnName="NIC" DataSourceName="" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@NIC" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="NIC" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="MemberSign" ColumnName="MemberSign" DataSourceName="" DataTypeServer="image" DbType="Binary" Direction="Input" ParameterName="@MemberSign" Precision="0" ProviderType="Image" Scale="0" Size="2147483647" SourceColumn="MemberSign" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="SecretarySign" ColumnName="SecretarySign" DataSourceName="" DataTypeServer="image" DbType="Binary" Direction="Input" ParameterName="@SecretarySign" Precision="0" ProviderType="Image" Scale="0" Size="2147483647" SourceColumn="SecretarySign" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="IssueDate" ColumnName="IssueDate" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@IssueDate" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="IssueDate" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="ValidDate" ColumnName="ValidDate" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@ValidDate" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="ValidDate" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="FCardNo" ColumnName="FCardNo" DataSourceName="" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@FCardNo" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="FCardNo" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="GrandFatherName" ColumnName="GrandFatherName" DataSourceName="" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@GrandFatherName" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="GrandFatherName" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="Nukh" ColumnName="Nukh" DataSourceName="" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@Nukh" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="Nukh" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="Orakh" ColumnName="Orakh" DataSourceName="" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@Orakh" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="Orakh" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="Address" ColumnName="Address" DataSourceName="" DataTypeServer="varchar(100)" DbType="AnsiString" Direction="Input" ParameterName="@Address" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="Address" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="False" AutogeneratedName="ID" ColumnName="ID" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblHallBookingTableAdapter" GeneratorDataComponentClassName="tblHallBookingTableAdapter" Name="tblHallBooking" UserDataComponentName="tblHallBookingTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CommunityConnectionString (Settings)" DbObjectName="Community.dbo.tblHallBooking" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="True" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="True" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="False">
+                    <CommandText>DELETE FROM [tblHallBooking] WHERE (([ID] = @Original_ID) AND ((@IsNull_SerialNo = 1 AND [SerialNo] IS NULL) OR ([SerialNo] = @Original_SerialNo)) AND ((@IsNull_Date = 1 AND [Date] IS NULL) OR ([Date] = @Original_Date)) AND ((@IsNull_Mr = 1 AND [Mr] IS NULL) OR ([Mr] = @Original_Mr)) AND ((@IsNull_Event = 1 AND [Event] IS NULL) OR ([Event] = @Original_Event)) AND ((@IsNull_Hall1 = 1 AND [Hall1] IS NULL) OR ([Hall1] = @Original_Hall1)) AND ((@IsNull_Hall2 = 1 AND [Hall2] IS NULL) OR ([Hall2] = @Original_Hall2)) AND ((@IsNull_Hall3 = 1 AND [Hall3] IS NULL) OR ([Hall3] = @Original_Hall3)) AND ((@IsNull_Hall4 = 1 AND [Hall4] IS NULL) OR ([Hall4] = @Original_Hall4)) AND ((@IsNull_Dated = 1 AND [Dated] IS NULL) OR ([Dated] = @Original_Dated)) AND ((@IsNull_Day = 1 AND [Day] IS NULL) OR ([Day] = @Original_Day)) AND ((@IsNull_FromTime = 1 AND [FromTime] IS NULL) OR ([FromTime] = @Original_FromTime)) AND ((@IsNull_ToTime = 1 AND [ToTime] IS NULL) OR ([ToTime] = @Original_ToTime)) AND ((@IsNull_Remarks = 1 AND [Remarks] IS NULL) OR ([Remarks] = @Original_Remarks)) AND ((@IsNull_FName = 1 AND [FName] IS NULL) OR ([FName] = @Original_FName)) AND ((@IsNull_Orakh = 1 AND [Orakh] IS NULL) OR ([Orakh] = @Original_Orakh)) AND ((@IsNull_ReasonCancel = 1 AND [ReasonCancel] IS NULL) OR ([ReasonCancel] = @Original_ReasonCancel)) AND ((@IsNull_Amount = 1 AND [Amount] IS NULL) OR ([Amount] = @Original_Amount)) AND ((@IsNull_Account = 1 AND [Account] IS NULL) OR ([Account] = @Original_Account)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="False" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SerialNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SerialNo" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SerialNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SerialNo" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Date" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Date" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Date" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Date" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Mr" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Mr" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Mr" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Mr" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Event" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Event" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Event" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Event" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Hall1" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Hall1" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Hall1" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Hall1" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Hall2" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Hall2" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Hall2" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Hall2" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Hall3" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Hall3" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Hall3" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Hall3" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Hall4" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Hall4" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Hall4" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Hall4" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Dated" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Dated" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Dated" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Dated" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Day" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Day" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Day" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Day" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_FromTime" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FromTime" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_FromTime" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FromTime" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ToTime" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ToTime" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_ToTime" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="ToTime" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Remarks" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Remarks" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Remarks" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Remarks" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_FName" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FName" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_FName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FName" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Orakh" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Orakh" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Orakh" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Orakh" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ReasonCancel" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ReasonCancel" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_ReasonCancel" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ReasonCancel" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Amount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Amount" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Amount" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Amount" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Account" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Account" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Account" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Account" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="False">
+                    <CommandText>INSERT INTO [tblHallBooking] ([SerialNo], [Date], [Mr], [Event], [Hall1], [Hall2], [Hall3], [Hall4], [Dated], [Day], [FromTime], [ToTime], [Remarks], [FName], [Orakh], [ReasonCancel], [Amount], [Account]) VALUES (@SerialNo, @Date, @Mr, @Event, @Hall1, @Hall2, @Hall3, @Hall4, @Dated, @Day, @FromTime, @ToTime, @Remarks, @FName, @Orakh, @ReasonCancel, @Amount, @Account);
+SELECT ID, SerialNo, Date, Mr, Event, Hall1, Hall2, Hall3, Hall4, Dated, Day, FromTime, ToTime, Remarks, FName, Orakh, ReasonCancel, Amount, Account FROM tblHallBooking WHERE (ID = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SerialNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SerialNo" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Date" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Date" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Mr" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Mr" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Event" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Event" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Hall1" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Hall1" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Hall2" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Hall2" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Hall3" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Hall3" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Hall4" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Hall4" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Dated" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Dated" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Day" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Day" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@FromTime" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FromTime" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@ToTime" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="ToTime" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Remarks" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Remarks" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@FName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FName" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Orakh" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Orakh" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ReasonCancel" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ReasonCancel" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Amount" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Amount" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Account" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Account" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="True">
+                    <CommandText>SELECT 
+		tblHallBooking.ID,
+		tblHallBooking.SerialNo,
+		tblHallBooking.Date,
+		tblHallBooking.Mr,
+		tblHallBooking.[Event],
+		tblHallBooking.Hall1,
+		tblHallBooking.Hall2,
+		tblHallBooking.Hall3,
+		tblHallBooking.Hall4,
+		tblHallBooking.Dated,
+		tblHallBooking.[Day],
+		tblHallBooking.FromTime,
+		tblHallBooking.ToTime,
+		tblHallBooking.Remarks,
+		tblHallBooking.FName,
+		tblHallBooking.Orakh,
+		tblHallBooking.ReasonCancel,
+		tblHallBooking.Amount,
+		tblHallBooking.Account
+ 	FROM
+		tblHallBooking</CommandText>
+                    <Parameters>
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="False">
+                    <CommandText>UPDATE [tblHallBooking] SET [SerialNo] = @SerialNo, [Date] = @Date, [Mr] = @Mr, [Event] = @Event, [Hall1] = @Hall1, [Hall2] = @Hall2, [Hall3] = @Hall3, [Hall4] = @Hall4, [Dated] = @Dated, [Day] = @Day, [FromTime] = @FromTime, [ToTime] = @ToTime, [Remarks] = @Remarks, [FName] = @FName, [Orakh] = @Orakh, [ReasonCancel] = @ReasonCancel, [Amount] = @Amount, [Account] = @Account WHERE (([ID] = @Original_ID) AND ((@IsNull_SerialNo = 1 AND [SerialNo] IS NULL) OR ([SerialNo] = @Original_SerialNo)) AND ((@IsNull_Date = 1 AND [Date] IS NULL) OR ([Date] = @Original_Date)) AND ((@IsNull_Mr = 1 AND [Mr] IS NULL) OR ([Mr] = @Original_Mr)) AND ((@IsNull_Event = 1 AND [Event] IS NULL) OR ([Event] = @Original_Event)) AND ((@IsNull_Hall1 = 1 AND [Hall1] IS NULL) OR ([Hall1] = @Original_Hall1)) AND ((@IsNull_Hall2 = 1 AND [Hall2] IS NULL) OR ([Hall2] = @Original_Hall2)) AND ((@IsNull_Hall3 = 1 AND [Hall3] IS NULL) OR ([Hall3] = @Original_Hall3)) AND ((@IsNull_Hall4 = 1 AND [Hall4] IS NULL) OR ([Hall4] = @Original_Hall4)) AND ((@IsNull_Dated = 1 AND [Dated] IS NULL) OR ([Dated] = @Original_Dated)) AND ((@IsNull_Day = 1 AND [Day] IS NULL) OR ([Day] = @Original_Day)) AND ((@IsNull_FromTime = 1 AND [FromTime] IS NULL) OR ([FromTime] = @Original_FromTime)) AND ((@IsNull_ToTime = 1 AND [ToTime] IS NULL) OR ([ToTime] = @Original_ToTime)) AND ((@IsNull_Remarks = 1 AND [Remarks] IS NULL) OR ([Remarks] = @Original_Remarks)) AND ((@IsNull_FName = 1 AND [FName] IS NULL) OR ([FName] = @Original_FName)) AND ((@IsNull_Orakh = 1 AND [Orakh] IS NULL) OR ([Orakh] = @Original_Orakh)) AND ((@IsNull_ReasonCancel = 1 AND [ReasonCancel] IS NULL) OR ([ReasonCancel] = @Original_ReasonCancel)) AND ((@IsNull_Amount = 1 AND [Amount] IS NULL) OR ([Amount] = @Original_Amount)) AND ((@IsNull_Account = 1 AND [Account] IS NULL) OR ([Account] = @Original_Account)));
+SELECT ID, SerialNo, Date, Mr, Event, Hall1, Hall2, Hall3, Hall4, Dated, Day, FromTime, ToTime, Remarks, FName, Orakh, ReasonCancel, Amount, Account FROM tblHallBooking WHERE (ID = @ID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SerialNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SerialNo" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Date" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Date" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Mr" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Mr" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Event" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Event" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Hall1" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Hall1" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Hall2" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Hall2" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Hall3" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Hall3" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Hall4" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Hall4" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Dated" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Dated" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Day" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Day" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@FromTime" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FromTime" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@ToTime" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="ToTime" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Remarks" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Remarks" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@FName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FName" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Orakh" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Orakh" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ReasonCancel" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ReasonCancel" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Amount" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Amount" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Account" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Account" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="False" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SerialNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SerialNo" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SerialNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SerialNo" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Date" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Date" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Date" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Date" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Mr" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Mr" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Mr" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Mr" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Event" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Event" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Event" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Event" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Hall1" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Hall1" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Hall1" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Hall1" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Hall2" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Hall2" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Hall2" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Hall2" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Hall3" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Hall3" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Hall3" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Hall3" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Hall4" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Hall4" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Hall4" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Hall4" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Dated" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Dated" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Dated" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Dated" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Day" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Day" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Day" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Day" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_FromTime" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FromTime" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_FromTime" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FromTime" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ToTime" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ToTime" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_ToTime" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="ToTime" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Remarks" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Remarks" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Remarks" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Remarks" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_FName" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FName" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_FName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FName" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Orakh" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Orakh" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Orakh" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Orakh" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ReasonCancel" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ReasonCancel" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_ReasonCancel" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ReasonCancel" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Amount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Amount" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Amount" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Amount" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Account" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Account" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Account" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Account" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="False" AutogeneratedName="ID" ColumnName="ID" DataSourceName="Community.dbo.tblHallBooking" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="SerialNo" DataSetColumn="SerialNo" />
+              <Mapping SourceColumn="Date" DataSetColumn="Date" />
+              <Mapping SourceColumn="Mr" DataSetColumn="Mr" />
+              <Mapping SourceColumn="Event" DataSetColumn="Event" />
+              <Mapping SourceColumn="Hall1" DataSetColumn="Hall1" />
+              <Mapping SourceColumn="Hall2" DataSetColumn="Hall2" />
+              <Mapping SourceColumn="Hall3" DataSetColumn="Hall3" />
+              <Mapping SourceColumn="Hall4" DataSetColumn="Hall4" />
+              <Mapping SourceColumn="Dated" DataSetColumn="Dated" />
+              <Mapping SourceColumn="Day" DataSetColumn="Day" />
+              <Mapping SourceColumn="FromTime" DataSetColumn="FromTime" />
+              <Mapping SourceColumn="ToTime" DataSetColumn="ToTime" />
+              <Mapping SourceColumn="Remarks" DataSetColumn="Remarks" />
+              <Mapping SourceColumn="FName" DataSetColumn="FName" />
+              <Mapping SourceColumn="Orakh" DataSetColumn="Orakh" />
+              <Mapping SourceColumn="ReasonCancel" DataSetColumn="ReasonCancel" />
+              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
+              <Mapping SourceColumn="Account" DataSetColumn="Account" />
+            </Mappings>
+            <Sources>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblEventsTableAdapter" GeneratorDataComponentClassName="tblEventsTableAdapter" Name="tblEvents" UserDataComponentName="tblEventsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CommunityConnectionString (Settings)" DbObjectName="Community.dbo.tblEvents" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="True" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="True" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="False">
+                    <CommandText>DELETE FROM [tblEvents] WHERE (([ID] = @Original_ID) AND ((@IsNull_Event = 1 AND [Event] IS NULL) OR ([Event] = @Original_Event)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="False" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Event" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Event" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Event" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Event" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="False">
+                    <CommandText>INSERT INTO [tblEvents] ([Event]) VALUES (@Event);
+SELECT ID, Event FROM tblEvents WHERE (ID = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Event" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Event" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="False">
+                    <CommandText>SELECT     ID, Event
+FROM         tblEvents</CommandText>
+                    <Parameters>
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="False">
+                    <CommandText>UPDATE [tblEvents] SET [Event] = @Event WHERE (([ID] = @Original_ID) AND ((@IsNull_Event = 1 AND [Event] IS NULL) OR ([Event] = @Original_Event)));
+SELECT ID, Event FROM tblEvents WHERE (ID = @ID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Event" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Event" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="False" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Event" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Event" SourceColumnNullMapping="True" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="True" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Event" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Event" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                      <Parameter AllowDbNull="False" AutogeneratedName="ID" ColumnName="ID" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="Event" DataSetColumn="Event" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="CommunityConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="True" GeneratorSourceName="AddEvents" Modifier="Public" Name="AddEvents" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="True" UserGetMethodName="GetDataBy" UserSourceName="AddEvents">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="False">
+                    <CommandText>INSERT INTO [tblEvents] ([Event]) VALUES (@Event);
+</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="True" AutogeneratedName="Event" ColumnName="Event" DataSourceName="" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@Event" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="Event" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="CommunityConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="True" GeneratorSourceName="DeleteEvent" Modifier="Public" Name="DeleteEvent" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="True" UserGetMethodName="GetDataBy1" UserSourceName="DeleteEvent">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="False">
+                    <CommandText>DELETE FROM [tblEvents] WHERE (([ID] = @Original_ID))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="False" AutogeneratedName="Original_ID" ColumnName="ID" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="CommunityConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="True" GeneratorSourceName="UpdateEvent" Modifier="Public" Name="UpdateEvent" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="True" UserGetMethodName="GetDataBy2" UserSourceName="UpdateEvent">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="False">
+                    <CommandText>UPDATE [tblEvents] SET [Event] = @Event WHERE (([ID] = @Original_ID) )</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="True" AutogeneratedName="Event" ColumnName="Event" DataSourceName="" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@Event" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="Event" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="False" AutogeneratedName="Original_ID" ColumnName="ID" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID" SourceColumnNullMapping="False" SourceVersion="Original">
+                      </Parameter>
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dataset" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dataset" msprop:Generator_DataSetName="dataset">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tblNIC" msprop:Generator_UserTableName="tblNIC" msprop:Generator_RowDeletedName="tblNICRowDeleted" msprop:Generator_RowChangedName="tblNICRowChanged" msprop:Generator_RowClassName="tblNICRow" msprop:Generator_RowChangingName="tblNICRowChanging" msprop:Generator_RowEvArgName="tblNICRowChangeEvent" msprop:Generator_RowEvHandlerName="tblNICRowChangeEventHandler" msprop:Generator_TableClassName="tblNICDataTable" msprop:Generator_TableVarName="tabletblNIC" msprop:Generator_RowDeletingName="tblNICRowDeleting" msprop:Generator_TablePropName="tblNIC">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" type="xs:int" />
+              <xs:element name="MemberID" msprop:Generator_UserColumnName="MemberID" msprop:Generator_ColumnVarNameInTable="columnMemberID" msprop:Generator_ColumnPropNameInRow="MemberID" msprop:Generator_ColumnPropNameInTable="MemberIDColumn" type="xs:int" />
+              <xs:element name="Image" msprop:Generator_UserColumnName="Image" msprop:Generator_ColumnVarNameInTable="columnImage" msprop:Generator_ColumnPropNameInRow="Image" msprop:Generator_ColumnPropNameInTable="ImageColumn" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="NIC" msprop:Generator_UserColumnName="NIC" msprop:Generator_ColumnVarNameInTable="columnNIC" msprop:Generator_ColumnPropNameInRow="NIC" msprop:Generator_ColumnPropNameInTable="NICColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MemberSign" msprop:Generator_UserColumnName="MemberSign" msprop:Generator_ColumnVarNameInTable="columnMemberSign" msprop:Generator_ColumnPropNameInRow="MemberSign" msprop:Generator_ColumnPropNameInTable="MemberSignColumn" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="SecretarySign" msprop:Generator_UserColumnName="SecretarySign" msprop:Generator_ColumnVarNameInTable="columnSecretarySign" msprop:Generator_ColumnPropNameInRow="SecretarySign" msprop:Generator_ColumnPropNameInTable="SecretarySignColumn" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="IssueDate" msprop:Generator_UserColumnName="IssueDate" msprop:Generator_ColumnVarNameInTable="columnIssueDate" msprop:Generator_ColumnPropNameInRow="IssueDate" msprop:Generator_ColumnPropNameInTable="IssueDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ValidDate" msprop:Generator_UserColumnName="ValidDate" msprop:Generator_ColumnVarNameInTable="columnValidDate" msprop:Generator_ColumnPropNameInRow="ValidDate" msprop:Generator_ColumnPropNameInTable="ValidDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FCardNo" msprop:Generator_UserColumnName="FCardNo" msprop:Generator_ColumnVarNameInTable="columnFCardNo" msprop:Generator_ColumnPropNameInRow="FCardNo" msprop:Generator_ColumnPropNameInTable="FCardNoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GrandFatherName" msprop:Generator_UserColumnName="GrandFatherName" msprop:Generator_ColumnVarNameInTable="columnGrandFatherName" msprop:Generator_ColumnPropNameInRow="GrandFatherName" msprop:Generator_ColumnPropNameInTable="GrandFatherNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Orakh" msprop:Generator_UserColumnName="Orakh" msprop:Generator_ColumnVarNameInTable="columnOrakh" msprop:Generator_ColumnPropNameInRow="Orakh" msprop:Generator_ColumnPropNameInTable="OrakhColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nukh" msprop:Generator_UserColumnName="Nukh" msprop:Generator_ColumnVarNameInTable="columnNukh" msprop:Generator_ColumnPropNameInRow="Nukh" msprop:Generator_ColumnPropNameInTable="NukhColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Address" msprop:Generator_UserColumnName="Address" msprop:Generator_ColumnVarNameInTable="columnAddress" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MemberName" msprop:Generator_UserColumnName="MemberName" msprop:Generator_ColumnVarNameInTable="columnMemberName" msprop:Generator_ColumnPropNameInRow="MemberName" msprop:Generator_ColumnPropNameInTable="MemberNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FatherName" msprop:Generator_UserColumnName="FatherName" msprop:Generator_ColumnVarNameInTable="columnFatherName" msprop:Generator_ColumnPropNameInRow="FatherName" msprop:Generator_ColumnPropNameInTable="FatherNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DOB" msprop:Generator_UserColumnName="DOB" msprop:Generator_ColumnVarNameInTable="columnDOB" msprop:Generator_ColumnPropNameInRow="DOB" msprop:Generator_ColumnPropNameInTable="DOBColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BloodGroup" msprop:Generator_UserColumnName="BloodGroup" msprop:Generator_ColumnVarNameInTable="columnBloodGroup" msprop:Generator_ColumnPropNameInRow="BloodGroup" msprop:Generator_ColumnPropNameInTable="BloodGroupColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CNIC" msprop:Generator_UserColumnName="CNIC" msprop:Generator_ColumnVarNameInTable="columnCNIC" msprop:Generator_ColumnPropNameInRow="CNIC" msprop:Generator_ColumnPropNameInTable="CNICColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Mobile" msprop:Generator_UserColumnName="Mobile" msprop:Generator_ColumnVarNameInTable="columnMobile" msprop:Generator_ColumnPropNameInRow="Mobile" msprop:Generator_ColumnPropNameInTable="MobileColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblHallBooking" msprop:Generator_UserTableName="tblHallBooking" msprop:Generator_RowDeletedName="tblHallBookingRowDeleted" msprop:Generator_RowChangedName="tblHallBookingRowChanged" msprop:Generator_RowClassName="tblHallBookingRow" msprop:Generator_RowChangingName="tblHallBookingRowChanging" msprop:Generator_RowEvArgName="tblHallBookingRowChangeEvent" msprop:Generator_RowEvHandlerName="tblHallBookingRowChangeEventHandler" msprop:Generator_TableClassName="tblHallBookingDataTable" msprop:Generator_TableVarName="tabletblHallBooking" msprop:Generator_RowDeletingName="tblHallBookingRowDeleting" msprop:Generator_TablePropName="tblHallBooking">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInTable="IDColumn" type="xs:int" />
+              <xs:element name="SerialNo" msprop:Generator_UserColumnName="SerialNo" msprop:Generator_ColumnPropNameInRow="SerialNo" msprop:Generator_ColumnVarNameInTable="columnSerialNo" msprop:Generator_ColumnPropNameInTable="SerialNoColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Date" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInTable="DateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Mr" msprop:Generator_UserColumnName="Mr" msprop:Generator_ColumnPropNameInRow="Mr" msprop:Generator_ColumnVarNameInTable="columnMr" msprop:Generator_ColumnPropNameInTable="MrColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Event" msprop:Generator_UserColumnName="Event" msprop:Generator_ColumnPropNameInRow="Event" msprop:Generator_ColumnVarNameInTable="columnEvent" msprop:Generator_ColumnPropNameInTable="EventColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Hall1" msprop:Generator_UserColumnName="Hall1" msprop:Generator_ColumnPropNameInRow="Hall1" msprop:Generator_ColumnVarNameInTable="columnHall1" msprop:Generator_ColumnPropNameInTable="Hall1Column" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Hall2" msprop:Generator_UserColumnName="Hall2" msprop:Generator_ColumnPropNameInRow="Hall2" msprop:Generator_ColumnVarNameInTable="columnHall2" msprop:Generator_ColumnPropNameInTable="Hall2Column" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Hall3" msprop:Generator_UserColumnName="Hall3" msprop:Generator_ColumnPropNameInRow="Hall3" msprop:Generator_ColumnVarNameInTable="columnHall3" msprop:Generator_ColumnPropNameInTable="Hall3Column" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Hall4" msprop:Generator_UserColumnName="Hall4" msprop:Generator_ColumnPropNameInRow="Hall4" msprop:Generator_ColumnVarNameInTable="columnHall4" msprop:Generator_ColumnPropNameInTable="Hall4Column" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Dated" msprop:Generator_UserColumnName="Dated" msprop:Generator_ColumnPropNameInRow="Dated" msprop:Generator_ColumnVarNameInTable="columnDated" msprop:Generator_ColumnPropNameInTable="DatedColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Day" msprop:Generator_UserColumnName="Day" msprop:Generator_ColumnPropNameInRow="Day" msprop:Generator_ColumnVarNameInTable="columnDay" msprop:Generator_ColumnPropNameInTable="DayColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FromTime" msprop:Generator_UserColumnName="FromTime" msprop:Generator_ColumnPropNameInRow="FromTime" msprop:Generator_ColumnVarNameInTable="columnFromTime" msprop:Generator_ColumnPropNameInTable="FromTimeColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ToTime" msprop:Generator_UserColumnName="ToTime" msprop:Generator_ColumnPropNameInRow="ToTime" msprop:Generator_ColumnVarNameInTable="columnToTime" msprop:Generator_ColumnPropNameInTable="ToTimeColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Remarks" msprop:Generator_UserColumnName="Remarks" msprop:Generator_ColumnPropNameInRow="Remarks" msprop:Generator_ColumnVarNameInTable="columnRemarks" msprop:Generator_ColumnPropNameInTable="RemarksColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FName" msprop:Generator_UserColumnName="FName" msprop:Generator_ColumnPropNameInRow="FName" msprop:Generator_ColumnVarNameInTable="columnFName" msprop:Generator_ColumnPropNameInTable="FNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Orakh" msprop:Generator_UserColumnName="Orakh" msprop:Generator_ColumnPropNameInRow="Orakh" msprop:Generator_ColumnVarNameInTable="columnOrakh" msprop:Generator_ColumnPropNameInTable="OrakhColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ReasonCancel" msprop:Generator_UserColumnName="ReasonCancel" msprop:Generator_ColumnPropNameInRow="ReasonCancel" msprop:Generator_ColumnVarNameInTable="columnReasonCancel" msprop:Generator_ColumnPropNameInTable="ReasonCancelColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Amount" msprop:Generator_UserColumnName="Amount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInTable="AmountColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Account" msprop:Generator_UserColumnName="Account" msprop:Generator_ColumnPropNameInRow="Account" msprop:Generator_ColumnVarNameInTable="columnAccount" msprop:Generator_ColumnPropNameInTable="AccountColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblEvents" msprop:Generator_UserTableName="tblEvents" msprop:Generator_RowDeletedName="tblEventsRowDeleted" msprop:Generator_TableClassName="tblEventsDataTable" msprop:Generator_RowChangedName="tblEventsRowChanged" msprop:Generator_RowClassName="tblEventsRow" msprop:Generator_RowChangingName="tblEventsRowChanging" msprop:Generator_RowEvArgName="tblEventsRowChangeEvent" msprop:Generator_RowEvHandlerName="tblEventsRowChangeEventHandler" msprop:Generator_TablePropName="tblEvents" msprop:Generator_TableVarName="tabletblEvents" msprop:Generator_RowDeletingName="tblEventsRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInTable="IDColumn" type="xs:int" />
+              <xs:element name="Event" msprop:Generator_UserColumnName="Event" msprop:Generator_ColumnPropNameInRow="Event" msprop:Generator_ColumnVarNameInTable="columnEvent" msprop:Generator_ColumnPropNameInTable="EventColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblNIC" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="tblHallBooking_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblHallBooking" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="tblEvents_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblEvents" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
